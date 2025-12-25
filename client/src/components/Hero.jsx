@@ -82,7 +82,7 @@ const Hero = () => {
           </div>
 
           {/* Return Date */}
-          <div className="flex flex-col items-start gap-2 w-full">
+          <div className="flex flex-col items-start gap-2 ">
             <label htmlFor="return-date" className="text-sm font-medium">
               Return Date
             </label>
