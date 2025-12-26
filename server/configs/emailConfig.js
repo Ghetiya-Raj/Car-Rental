@@ -7,7 +7,7 @@ const BREVO_API_KEY = process.env.BREVO_API_KEY;
 // Function to send OTP via Brevo
 export const sendOtpEmail = async (email, otp, isPasswordReset = false) => {
   try {
-    const subject = isPasswordReset ? 'Password Reset OT' : 'Email Verification OTP';
+    const subject = isPasswordReset ? 'Password Reset OTP' : 'Email Verification OTP';
     const text = isPasswordReset
       ? `Your OTP for password reset is: ${otp}. This OTP will expire in 5 minutes.`
       : `Your OTP for email verification is: ${otp}. This OTP will expire in 5 minutes.`;
