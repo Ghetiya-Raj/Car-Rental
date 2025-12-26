@@ -61,7 +61,7 @@ const sendViaSMTP = async (toEmail, subject, text, html) => {
 // Generic send function using Brevo with retries and SMTP fallback
 export const sendEmail = async (toEmail, subject, text, html = null) => {
   if (!BREVO_API_KEY) {
-    console.warn('BREVO_API_KEY not set — attempting SMTP fallbac');
+    console.warn('BREVO_API_KEY not set — attempting SMTP fallback');
     return await sendViaSMTP(toEmail, subject, text, html || `<p>${text}</p>`);
   }
 
