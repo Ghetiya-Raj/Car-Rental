@@ -2,11 +2,16 @@ import nodemailer from 'nodemailer';
 
 // Create a transporter for sending emails
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // Must be false for 587
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false // This ignores certificate errors on Render
+  }
 });
 
 // Function to send OTP email
